@@ -50,6 +50,6 @@ module FormtasticHacks
       end
     end
 
-    self.label(method, options_for_label(options)) + hidden_fields_capture + inputs_capture
+    self.label(method, options_for_label(options)) + hidden_fields_capture.html_safe + inputs_capture.html_safe
   end
 end
