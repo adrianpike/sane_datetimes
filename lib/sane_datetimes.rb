@@ -3,7 +3,7 @@ module SaneDatetimes
     define_method :instantiate_time_object_with_two_field_date_times do |name, values|
       begin
 				if RUBY_VERSION >= '1.9'
-					values = Time.strptime(values.join(' '),"%m-%d-%Y %I:%M %p").to_time.to_a[0..5].reverse if values.first.is_a? String
+					values = Time.strptime(values.join(' '),"%m/%d/%Y %I:%M %p").to_time.to_a[0..5].reverse if values.first.is_a? String
 				else
 					values = Time.parse(values.join ' ').to_a[0..5].reverse if values.first.is_a? String
 				end

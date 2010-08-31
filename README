@@ -1,7 +1,7 @@
 SaneDatetimes
 =============
 
-Rails normally gives you an ugly set of select fields for datetime select. SaneDatetimes monkeypatches ActiveRecord to allow for a new format of multi-param input for TimeS, and includes a sort of hacked Formtastic plugin that gives you two text fields. One for the date and one for the time. 
+Rails normally gives you an ugly set of select fields for datetime select. SaneDatetimes monkeypatches ActiveRecord to allow for a new format of multi-param input for Times, and includes a sort of hacked Formtastic plugin that gives you two text fields. One for the date and one for the time. 
 
 Examples
 ========
@@ -10,5 +10,9 @@ Examples
 <%= form.input :depart_at, :as => :sane_datetime, :input_html => { :date => { :class => 'datepicker' } } %>
 
 
+Credits
+=======
 
-Copyright (c) 2009 Amiel martin, released under the MIT license
+Originally forked from Amiel Martin's sane_datetimes, I changed the Time selector to a single dropdown in 30-minute incremenets, and brought it up to work with Rails 2.3.8 and Ruby 1.9+.
+
+Copyright (c) 2010 Adrian Pike, released under the MIT license
