@@ -45,7 +45,7 @@ module FormtasticHacks
 						inputs_capture << template.select_tag("#{@object_name}[#{field_name}]", template.options_for_select(select_options,decoded_date), this_html_options.merge(:id => html_id))
 
 					when :date
-						inputs_capture << template.text_field_tag("#{@object_name}[#{field_name}]", datetime.to_date, this_html_options.merge(:id => html_id))
+						inputs_capture << template.text_field_tag("#{@object_name}[#{field_name}]", I18n.l(datetime.to_date), this_html_options.merge(:id => html_id))
 				end
       end
     end
