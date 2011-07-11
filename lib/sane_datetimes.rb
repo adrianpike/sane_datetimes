@@ -10,6 +10,7 @@ module SaneDatetimes
         instantiate_time_object_without_two_field_date_times(name, values)
       rescue ArgumentError
         self.errors.add(name, 'bad date')
+        values = nil
       end
     end
 
