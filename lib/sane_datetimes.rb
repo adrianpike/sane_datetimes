@@ -1,6 +1,10 @@
 module SaneDatetimes
   def self.included(base)
     define_method :instantiate_time_object_with_two_field_date_times do |name, values|
+      
+      p name
+      p values
+      
       begin
         if RUBY_VERSION >= '1.9'
 					values = Time.strptime(values.join(' '),"%m/%d/%Y %I:%M %p").to_time.to_a[0..5].reverse if values.first.is_a? String
