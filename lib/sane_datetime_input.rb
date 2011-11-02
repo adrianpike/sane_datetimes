@@ -56,7 +56,7 @@ class SaneDatetimeInput
 
         template.select_tag(object_name + '[' + fragment_name(fragment) + ']', template.options_for_select(select_options, value ? value.strftime('%I:%M %p') : ''), input_html_options.merge(:id => fragment_id(fragment)))
       when :date
-        template.text_field_tag(object_name + '[' + fragment_name(fragment) + ']', value ? (I18n.l(value.to_date, :format => :short)) : '', input_html_options.merge(:id => fragment_id(fragment)))
+        template.text_field_tag(object_name + '[' + fragment_name(fragment) + ']', value ? (I18n.l(value.to_date)) : '', input_html_options.merge(:id => fragment_id(fragment)))
     end
   end
     

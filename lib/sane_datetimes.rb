@@ -20,4 +20,3 @@ module SaneDatetimes
     base.alias_method_chain :read_time_parameter_value, :date_string_and_time_string
   end
 end
-
