@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "sane_datetimes"
   gem.homepage = "http://github.com/adrianpike/sane_datetimes"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{sane_datetimes gives you a friendly formtastic input for dates & times.}
+  gem.description = %Q{Rails normally gives you an ugly set of select fields for datetime select. SaneDatetimes monkeypatches ActiveRecord to allow for a new format of multi-param input for Times, and includes a sort of hacked Formtastic plugin that gives you two text fields. One for the date and one for the time. }
   gem.email = "adrian@pikeapps.com"
   gem.authors = ["Adrian Pike"]
   # dependencies defined in Gemfile
