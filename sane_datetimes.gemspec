@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "sane_datetimes"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Pike"]
@@ -26,8 +26,9 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "init.rb",
-    "lib/formtastic_hacks.rb",
+    "lib/sane_datetime_input.rb",
     "lib/sane_datetimes.rb",
+    "sane_datetimes.gemspec",
     "spec/sane_datetimes_spec.rb",
     "spec/spec_helper.rb",
     "test/sane_datetimes_test.rb"
