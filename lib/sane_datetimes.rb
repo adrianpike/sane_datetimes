@@ -1,3 +1,5 @@
+require 'sane_datetime_input'
+
 module SaneDatetimes
   def self.included(base)
     
@@ -20,3 +22,5 @@ module SaneDatetimes
     base.alias_method_chain :read_time_parameter_value, :date_string_and_time_string
   end
 end
+
+ActiveRecord::Base.class_eval { include SaneDatetimes }
