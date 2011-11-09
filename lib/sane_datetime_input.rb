@@ -52,9 +52,10 @@ class SaneDatetimeInput
             end
           end
           }.flatten
-        decoded_date = datetime.strftime('%I:%M %p') rescue nil
+        formatted_value = value.strftime('%I:%M %p') rescue nil
+        select_options.unshift(formatted_value) if formatted_value
 
-        template.select_tag(object_name + '[' + fragment_name(fragment) + ']', template.options_for_select(select_options, value ? value.strftime('%I:%M %p') : ''), input_html_options.merge(:id => fragment_id(fragment)))
+        template.select_tag(object_name + '[' + fragment_name(fragment) + ']', template.options_for_select(select_options, formatted_value), input_html_options.merge(:id => fragment_id(fragment)))
       when :date
         template.text_field_tag(object_name + '[' + fragment_name(fragment) + ']', value ? (I18n.l(value.to_date)) : '', input_html_options.merge(:id => fragment_id(fragment)))
     end
