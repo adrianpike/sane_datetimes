@@ -11,9 +11,8 @@ module SaneDatetimes
         begin
           Time.strptime(values_hash_from_param.values.join(' '), parse_format)
         rescue ArgumentError
-          raise "Invalid Date"
+          nil # It was an invalid date. Another option is to raise something here.
         end
-      
       else
         read_time_parameter_value_without_date_string_and_time_string(name, values_hash_from_param)
       end
