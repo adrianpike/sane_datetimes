@@ -6,10 +6,11 @@ module SaneDatetimes
     define_method :read_time_parameter_value_with_date_string_and_time_string do |name, values_hash_from_param|
       if values_hash_from_param.keys.size == 2 then
         # TODO: use the all important locale!
-        parse_format = "%m/%d/%Y %I:%M %p"
+        parse_format = "%m/%d/%Y %I:%M %p %:z"
       
         begin
-          Time.strptime(values_hash_from_param.values.join(' '), parse_format)
+          time_string = values_hash_from_param.values.join(' ') + ' ' + Time.zone.formatted_offset
+          Time.strptime(time_string, parse_format)
         rescue ArgumentError
           nil # It was an invalid date. Another option is to raise something here.
         end
